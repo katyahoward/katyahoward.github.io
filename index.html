@@ -3,206 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katya Howard Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Katya Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-    color: #111;
+    font-family: 'Playfair Display', serif;
 }
 
-/* NAV */
-nav {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #111;
-    font-weight: 500;
+/* Grain texture */
+.texture {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.15;
+    pointer-events: none;
 }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-}
-.hero h1 {
-    font-size: 42px;
-}
-.hero p {
-    max-width: 600px;
-    margin: 20px auto;
-    color: #555;
-}
-.buttons a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 500;
-}
-.btn-primary {
-    background: black;
-    color: white;
-}
-.btn-secondary {
-    border: 1px solid black;
-    color: black;
-}
-
-/* SECTIONS */
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-h2 {
-    margin-bottom: 20px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* CARDS */
-.card {
-    background: white;
-    padding: 20px;
+/* Folder base */
+.folder {
+    position: relative;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-.card:hover {
-    transform: translateY(-5px);
+    padding: 40px;
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: white;
-    margin-top: 40px;
+.folder:hover {
+    transform: translateY(-15px);
+}
+
+/* Paperclip */
+.paperclip {
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    transform: rotate(5deg);
+    font-size: 24px;
+}
+
+/* Overlap */
+.stack > div:not(:first-child) {
+    margin-top: -60px;
+}
+
+/* Tabs */
+.tab {
+    position: absolute;
+    top: -20px;
+    width: 120px;
+    height: 30px;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Textures */
+.paint {
+    background: linear-gradient(145deg,#0047AB,#002f7a);
+}
+
+.linen {
+    background: repeating-linear-gradient(
+        45deg,
+        #E0FFFF,
+        #E0FFFF 2px,
+        #d0f0f0 2px,
+        #d0f0f0 4px
+    );
+}
+
+.crumple {
+    background: repeating-linear-gradient(
+        0deg,
+        #002366,
+        #002366 10px,
+        #001a4d 10px,
+        #001a4d 12px
+    );
+}
+
+.stripes {
+    background: repeating-linear-gradient(
+        90deg,
+        #00BFFF,
+        #00BFFF 20px,
+        white 20px,
+        white 40px
+    );
 }
 </style>
+
 </head>
 
-<body>
+<body class="bg-[#E0FFFF] min-h-screen relative overflow-hidden">
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#vision">Vision</a>
-    <a href="#contact">Contact</a>
-</nav>
+<div class="texture"></div>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Creative Marketing Student | Digital Design Enthusiast | Brand Storyteller</h1>
-    <p>I blend strategy, creativity, and psychology to build brands that feel real, engaging, and impossible to ignore.</p>
-    <div class="buttons">
-        <a href="#projects" class="btn-primary">View My Work</a>
-        <a href="#contact" class="btn-secondary">Contact Me</a>
-    </div>
+<!-- HEADER -->
+<h1 class="absolute top-16 left-12 text-6xl uppercase tracking-tight leading-[0.9] text-[#00008B]">
+HOW TO CREATE YOUR NEXT BEST CAMPAIGN
+</h1>
+
+<div class="absolute top-8 right-12 text-2xl text-[#00008B]">
+CVA
 </div>
 
-<!-- ABOUT -->
-<section id="about">
-    <h2>About Me</h2>
-    <p><strong>“I don’t just market brands — I understand people.”</strong></p>
-    <p>
-        I’m a first-year BCom Marketing & Management Science student passionate about digital marketing, branding, and creative design.
-        I focus on why people engage, combining strategy, creativity, and psychology to create authentic brand experiences.
-    </p>
-</section>
+<!-- STACK -->
+<div class="stack max-w-3xl mx-auto mt-64 space-y-0">
 
-<!-- WHAT I DO -->
-<section>
-    <h2>What I Do</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Marketing & Brand Strategy</h3>
-            <p>Audience targeting, positioning, and campaign development.</p>
-        </div>
-        <div class="card">
-            <h3>Digital Design</h3>
-            <p>Social media visuals and cohesive brand identity design.</p>
-        </div>
-        <div class="card">
-            <h3>Content Creation</h3>
-            <p>Relatable storytelling and engaging content strategies.</p>
-        </div>
-        <div class="card">
-            <h3>Consumer Psychology</h3>
-            <p>Understanding emotional triggers and trust-based engagement.</p>
-        </div>
-    </div>
-</section>
+<!-- Folder 1 -->
+<div onclick="openPage('about.html')" class="folder paint text-white shadow-2xl z-10">
+    <div class="tab bg-blue-700 left-[10%]"></div>
+    <span class="paperclip">📎</span>
+    ABOUT ME
+</div>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="grid">
-        <div class="card">Branding & Visual Identity</div>
-        <div class="card">Content Creation</div>
-        <div class="card">Campaign Planning</div>
-        <div class="card">Canva & Social Media Tools</div>
-        <div class="card">Trend Analysis</div>
-        <div class="card">Creative Direction</div>
-    </div>
-</section>
+<!-- Folder 2 -->
+<div onclick="openPage('projects.html')" class="folder linen text-white shadow-2xl z-20">
+    <div class="tab bg-cyan-300 left-[40%]"></div>
+    <span class="paperclip">📎</span>
+    PROJECTS
+</div>
 
-<!-- PROJECTS -->
-<section id="projects">
-    <h2>Projects & Experience</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Etsy Mental Health Journal</h3>
-            <p>Designed a digital journal focused on emotional awareness and user experience.</p>
-        </div>
-        <div class="card">
-            <h3>Instagram Brand Concepts</h3>
-            <p>Created cohesive, lifestyle-driven brand pages and strategies.</p>
-        </div>
-        <div class="card">
-            <h3>Freelance-Style Work</h3>
-            <p>Developed visuals and brand aesthetics for small businesses.</p>
-        </div>
-    </div>
-</section>
+<!-- Folder 3 -->
+<div onclick="openPage('skills.html')" class="folder crumple text-[#00008B] shadow-2xl z-30">
+    <div class="tab bg-blue-900 left-[20%]"></div>
+    <span class="paperclip">📎</span>
+    SKILLS
+</div>
 
-<!-- VISION -->
-<section id="vision">
-    <h2>My Vision</h2>
-    <p>
-        To build brands that don’t feel like brands — but like experiences people actually want to be part of.
-    </p>
-</section>
+<!-- Folder 4 -->
+<div onclick="openPage('experience.html')" class="folder stripes text-[#00008B] shadow-2xl z-40">
+    <div class="tab bg-sky-400 left-[55%]"></div>
+    <span class="paperclip">📎</span>
+    EXPERIENCE
+</div>
 
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: katyamiahoward@gmail.com</p>
-    <p>Phone: 082 757 9777</p>
-</section>
+</div>
 
-<footer>
-    <p>© 2026 Katya Howard</p>
-</footer>
+<script>
+function openPage(page) {
+    document.querySelectorAll('.folder').forEach(f => {
+        f.style.opacity = "0";
+    });
+
+    setTimeout(() => {
+        window.location.href = page;
+    }, 500);
+}
+</script>
 
 </body>
 </html>
