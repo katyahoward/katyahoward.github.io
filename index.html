@@ -24,7 +24,7 @@ body {
     pointer-events: none;
 }
 
-/* Folder base */
+/* Folder */
 .folder {
     position: relative;
     border-radius: 12px;
@@ -38,9 +38,15 @@ body {
     transform: translateY(-15px);
 }
 
-/* Stack overlap */
-.stack > div:not(:first-child) {
-    margin-top: -80px;
+/* Stack upwards */
+.stack {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Overlap */
+.stack > div:not(:last-child) {
+    margin-bottom: -80px;
 }
 
 /* Tabs */
@@ -53,7 +59,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
     font-weight: bold;
 }
 
@@ -106,41 +111,45 @@ body {
 
 <div class="texture"></div>
 
-<!-- HEADING (FIXED TOP LEFT) -->
-<h1 class="absolute top-12 left-12 text-6xl uppercase tracking-tight leading-[0.9] text-[#00008B] z-50">
+<!-- HEADING (VERY TOP, SAFE SPACE) -->
+<h1 class="absolute top-6 left-12 text-6xl uppercase tracking-tight leading-[0.9] text-[#00008B] z-50">
 KATYA HOWARD'S PORTFOLIO
 </h1>
 
 <!-- LOGO -->
-<div class="absolute top-12 right-12 text-2xl text-[#00008B] z-50">
+<div class="absolute top-6 right-12 text-2xl text-[#00008B] z-50">
 CVA
 </div>
 
-<!-- STACK -->
-<div class="stack max-w-3xl mx-auto mt-72 relative">
+<!-- FOLDER STACK (BOTTOM ANCHORED) -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-center pb-10">
 
-<!-- Folder 1 -->
-<div onclick="openPage('about.html')" class="folder paint text-white shadow-2xl z-10">
-    <div class="tab bg-blue-800 left-[10%] text-[#F0FFFF] z-50">ABOUT ME</div>
+<div class="stack w-full max-w-3xl">
+
+<!-- EXPERIENCE (bottom layer visually) -->
+<div onclick="openPage('experience.html')" class="folder stripes shadow-2xl z-10">
+    <div class="tab bg-sky-400 left-[55%] text-[#00008B]">EXPERIENCE</div>
     <span class="paperclip">📎</span>
 </div>
 
-<!-- Folder 2 -->
-<div onclick="openPage('projects.html')" class="folder linen shadow-2xl z-20">
-    <div class="tab bg-cyan-300 left-[40%] text-[#00008B] z-50">PROJECTS</div>
+<!-- SKILLS -->
+<div onclick="openPage('skills.html')" class="folder crumple shadow-2xl z-20">
+    <div class="tab bg-blue-900 left-[20%] text-[#F0FFFF]">SKILLS</div>
     <span class="paperclip">📎</span>
 </div>
 
-<!-- Folder 3 -->
-<div onclick="openPage('skills.html')" class="folder crumple shadow-2xl z-30">
-    <div class="tab bg-blue-900 left-[20%] text-[#F0FFFF] z-50">SKILLS</div>
+<!-- PROJECTS -->
+<div onclick="openPage('projects.html')" class="folder linen shadow-2xl z-30">
+    <div class="tab bg-cyan-300 left-[40%] text-[#00008B]">PROJECTS</div>
     <span class="paperclip">📎</span>
 </div>
 
-<!-- Folder 4 -->
-<div onclick="openPage('experience.html')" class="folder stripes shadow-2xl z-40">
-    <div class="tab bg-sky-400 left-[55%] text-[#00008B] z-50">EXPERIENCE</div>
+<!-- ABOUT (top folder) -->
+<div onclick="openPage('about.html')" class="folder paint shadow-2xl z-40">
+    <div class="tab bg-blue-800 left-[10%] text-[#F0FFFF]">ABOUT ME</div>
     <span class="paperclip">📎</span>
+</div>
+
 </div>
 
 </div>
