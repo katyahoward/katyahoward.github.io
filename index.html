@@ -106,18 +106,21 @@ body {
 
 <div class="texture"></div>
 
-<!-- HEADING (HIGHER + SAFE) -->
-<h1 class="absolute top-6 left-12 text-6xl uppercase tracking-tight leading-[0.9] text-[#00008B] z-50">
+<!-- ✅ HEADER SECTION (OWN SPACE — NO OVERLAP POSSIBLE) -->
+<header class="flex justify-between items-start px-12 pt-8 pb-10 relative z-50">
+
+<h1 class="text-6xl uppercase tracking-tight leading-[0.9] text-[#00008B] max-w-2xl">
 KATYA HOWARD'S PORTFOLIO
 </h1>
 
-<!-- LOGO -->
-<div class="absolute top-6 right-12 text-2xl text-[#00008B] z-50">
+<div class="text-2xl text-[#00008B]">
 CVA
 </div>
 
-<!-- STACK (PUSHED LOWER — NO OVERLAP) -->
-<div class="stack max-w-3xl mx-auto mt-[320px] relative">
+</header>
+
+<!-- ✅ STACK (NOW BELOW HEADER — SAFE) -->
+<div class="stack max-w-3xl mx-auto mt-10 relative">
 
 <!-- Folder 1 -->
 <div onclick="openPage('about.html')" class="folder paint text-white shadow-2xl z-10">
